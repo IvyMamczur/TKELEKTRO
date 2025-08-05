@@ -58,6 +58,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh; /* Full screen video */
+    min-height: 300px;
     overflow: hidden;
 }
 
@@ -72,10 +73,35 @@ body {
 }
 
 .video-container video {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: cover;
     opacity: 0.10; /* Makes the video more transparent */
+    min-height: 300px;
+    min-width: 100vw;
+}
+
+/* Responsive video for mobile */
+@media (max-width: 900px) {
+    .video-section {
+        height: 50vh;
+        min-height: 200px;
+    }
+    .video-container video {
+        height: 50vh;
+        min-height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .video-section {
+        height: 35vh;
+        min-height: 120px;
+    }
+    .video-container video {
+        height: 35vh;
+        min-height: 120px;
+    }
 }
 
 nav {
@@ -329,4 +355,166 @@ button:hover {
 .anchor-offset {
     padding-top: 80px; /* Adjust this value to match the height of your fixed navbar */
     margin-top: -80px; /* Negative margin to offset the padding */
+}
+
+/* Responsive styles for all pages */
+@media (max-width: 900px) {
+    .columns {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .column {
+        width: 90vw;
+        max-width: 350px;
+        padding: 20px;
+    }
+    .logo {
+        width: 80vw;
+        max-width: 350px;
+    }
+    .logo-text {
+        font-size: 2.2rem;
+    }
+    .sub-text {
+        font-size: 1.1rem;
+        width: 90vw;
+        max-width: 350px;
+    }
+    .gallery img {
+        width: 90vw;
+        max-width: 350px;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.5rem 1rem;
+        position: static;
+    }
+    nav h1 {
+        font-size: 1.2rem;
+        margin: 0 0 10px 0;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0;
+        margin-left: 0;
+        padding-right: 0;
+    }
+    nav ul li {
+        width: 100%;
+    }
+    nav a {
+        display: block;
+        width: 100%;
+        padding: 0.7rem 0;
+        font-size: 1.1rem;
+    }
+    .section {
+        padding: 30px 5px;
+        min-height: unset;
+    }
+    .columns {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .column {
+        width: 98vw;
+        max-width: 99vw;
+        padding: 10px;
+    }
+    .logo {
+        width: 98vw;
+        max-width: 99vw;
+    }
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    .sub-text {
+        font-size: 1rem;
+        width: 98vw;
+        max-width: 99vw;
+    }
+    .gallery {
+        padding: 10px;
+    }
+    .gallery img {
+        width: 98vw;
+        max-width: 99vw;
+        height: auto;
+    }
+    .contact-section > div {
+        flex-direction: column !important;
+        margin-left: 0 !important;
+    }
+    .contact-section form {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    .contact-section input,
+    .contact-section textarea,
+    .contact-section button {
+        font-size: 1rem !important;
+    }
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Kontajnery sa prispôsobia */
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Jednotlivé stĺpce v službách */
+.column {
+    flex: 1 1 300px; /* minimálna šírka 300px */
+    text-align: center;
+}
+
+/* Galéria obrázkov */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-item {
+    flex: 1 1 200px;
+    object-fit: cover;
+}
+
+/* Responzívne menu a sekcie */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    nav h1 {
+        text-align: center;
+    }
+
+    .contact-section div[style] {
+        flex-direction: column !important;
+        margin-left: 0 !important;
+    }
+
+    form {
+        grid-template-columns: 1fr !important;
+    }
 }
