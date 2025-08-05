@@ -518,3 +518,37 @@ img, video {
         grid-template-columns: 1fr !important;
     }
 }
+/* Skryť tlačidlo na PC */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responzívne menu */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: none; /* skryté menu */
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul.show {
+        display: flex; /* zobrazí menu po kliknutí */
+    }
+
+    .menu-toggle {
+        display: block; /* tlačidlo sa ukáže */
+    }
+}
