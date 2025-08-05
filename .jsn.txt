@@ -1,0 +1,42 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll("nav a");
+    
+    // Smooth scrolling effect
+    navLinks.forEach(link => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute("href").substring(1);
+            document.getElementById(targetId).scrollIntoView({
+                behavior: "smooth"
+            });
+        });
+    });
+
+    // Parallax effect on scroll
+    window.addEventListener("scroll", () => {
+        document.querySelector("header").style.transform = `translateY(${window.scrollY * 0.5}px)`;
+    });
+
+    // Hover effect on gallery images
+    const galleryImages = document.querySelectorAll(".gallery img");
+    galleryImages.forEach(img => {
+        img.addEventListener("mousemove", (event) => {
+            const { offsetX, offsetY, target } = event;
+            const { clientWidth, clientHeight } = target;
+            const rotateX = (offsetY / clientHeight - 0.5) * 20;
+            const rotateY = (offsetX / clientWidth - 0.5) * -20;
+            target.style.transform = `scale(1.1) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+        img.addEventListener("mouseleave", () => {
+            img.style.transform = "scale(1) rotateX(0) rotateY(0)";
+        });
+    });
+
+    // Form submission alert
+    const form = document.querySelector("form");
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Thank you for your message! We'll get back to you soon.");
+        form.reset();
+    });
+});

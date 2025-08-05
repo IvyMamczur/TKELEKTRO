@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #333; /* Changed to dark grey */
+    color: white;
+    text-align: center;
+    display: block; /* Changed to block to allow scrolling */
+    height: auto; /* Changed to auto to allow scrolling */
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center the content vertically */
+    margin-top: -80px; /* Adjust this value to move the container up or down */
+    padding-top: 20px; /* Adjust this value to add space above the container */
+}
+
+.logo {
+    width: 400px; /* Full size */
+    height: auto;
+    transform: scale(0) rotate(0deg); /* Start with a small, rotated logo */
+    opacity: 0; /* Start with invisible logo */
+    transition: transform 2s ease-in-out, opacity 2s ease-in-out; /* Ensure the transition is smooth */
+}
+
+.logo-text {
+    font-family: 'Lato', sans-serif; /* Changed font to Lato */
+    font-size: 3.5rem; /* Increased font size */
+    font-weight: bold;
+    color: white; /* Changed color to white */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added text shadow */
+    margin-top: 0px; /* Adjusted margin to move higher */
+    margin-left: 0; /* Centered text under the logo */
+    opacity: 0.8; /* Made the text a little transparent */
+}
+
+.logo-text span {
+    color: #ff9800; /* Change color of "TK" to orange */
+}
+
+.sub-text {
+    font-family: 'Lato', sans-serif; /* Changed font to Lato */
+    font-size: 1.5rem; /* Increased font size */
+    font-weight: 300; /* Thin font weight */
+    color: white; /* White color */
+    margin-top: 10px; /* Space between the main text and sub-text */
+    opacity: 0.8; /* Made the text a little transparent */
+    width: 500px; /* Made the text wider than the logo */
+    text-align: center; /* Center the text */
+}
+
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen video */
+    overflow: hidden;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1; /* Ensure the video is behind the menu */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.10; /* Makes the video more transparent */
+}
+
+nav {
+    background: transparent; /* Make the navbar background transparent */
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+
+nav h1 {
+    color: white; /* Change text color to white */
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s ease-in-out;
+    margin-left: auto;
+    padding-right: 50px; /* Moves the navbar buttons slightly to the left */
+}
+
+nav ul:hover {
+    transform: scale(1.05);
+}
+
+nav a {
+    color: white; /* Change link color to white */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: white; /* Change underline color to white */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+header {
+    padding: 100px 20px 50px;
+    font-size: 2rem;
+}
+
+.section {
+    padding: 50px 20px; /* Reduced padding to make sections shorter */
+    min-height: 50vh; /* Reduced height to make sections shorter */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #333; /* Darker background for sections */
+    border-radius: 10px;
+    margin: 0; /* Removed margin between sections */
+}
+
+.section h2 {
+    font-family: 'Lato', sans-serif; /* Changed font to Lato */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    text-align: right; /* Move text to the right */
+    padding-right: 50px; /* Add padding to the right */
+}
+
+.section p {
+    font-size: 1rem; /* Reduced font size */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#about-us {
+    background: #333; /* Changed background to white */
+    color: rgb(255, 255, 255); /* Changed text color to black */
+    text-align: center;
+    padding: 50px 20px;
+    border-radius: 10px;
+    margin-left: 50px; /* Added margin to move section to the right */
+}
+
+#about-us h2 {
+    margin-left: 50px; /* Added margin to move text to the right */
+}
+
+.columns {
+    display: flex;
+    justify-content: center; /* Center columns */
+    margin-top: 30px;
+    gap: 30px; /* Keep the distance between columns */
+    margin-left: 0; /* Reduced margin to move columns to the left */
+}
+
+.column {
+    background: #fafafa; /* Lighter gray */
+    color: #000; /* Black text */
+    padding: 20px;
+    border-radius: 0;
+    width: 29%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure buttons are aligned in the same line */
+    align-items: center; /* Center the content horizontally */
+}
+
+.column img {
+    width: 40%; /* Adjusted image size */
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+.column button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff9800;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.column:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.column h3 {
+    color: #ff9800;
+    font-weight: bold;
+    font-size: 150%; /* Reduced font size */
+    margin-top: 5px; /* Reduced margin-top */
+}
+
+.column p {
+    font-size: 100%; /* Reduced font size */
+    max-width: 300px; /* Made the text wider */
+}
+
+.gallery {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.gallery img {
+    width: 300px; /* Slimmer image size */
+    height: 450px; /* Slimmer image size */
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.lightbox-image {
+    max-width: 160%;
+    max-height: 90%;
+    border-radius: 5px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+input, textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px;
+    background: #ff9800;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e68900;
+}
+
+.anchor-offset {
+    padding-top: 80px; /* Adjust this value to match the height of your fixed navbar */
+    margin-top: -80px; /* Negative margin to offset the padding */
+}
