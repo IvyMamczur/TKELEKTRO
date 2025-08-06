@@ -421,89 +421,67 @@ button:hover {
     cursor: pointer;
 }
 
-/* Mobile-specific adjustments */
+/* Pre mobilné zariadenia */
 @media (max-width: 768px) {
-    .logo-text {
-        font-size: 2.5rem;
+    .contact-section {
+        padding: 30px 20px;
     }
-
-    .sub-text {
-        font-size: 1rem;
-    }
-
-    .section h2 {
-        font-size: 2rem;
-        text-align: center;
-        padding-right: 0;
-    }
-
-    .columns {
-        flex-direction: column;
-    }
-
-    .column {
-        width: 100%;
-    }
-
-    .gallery img {
-        width: 100%;
-    }
-
-    .contact-section div[style] {
-        flex-direction: column !important;
+    .contact-section h2,
+    .contact-section p {
+        text-align: center !important;
         margin-left: 0 !important;
     }
-
-    form {
-        grid-template-columns: 1fr !important;
-    }
-    
-    /* TU PRIDÁVAM NOVÝ KÓD PRE KONTAKTNÚ SEKCIU */
-    .contact-section > div {
+    .contact-flex-container {
         flex-direction: column !important;
-        align-items: center; /* zarovnanie na stred */
+        align-items: center !important;
         margin-left: 0 !important;
-        padding: 0 10px; /* padding, aby nebol text prilepený na okraj */
     }
-
-    .contact-section > div > div:first-child {
-        margin-right: 0 !important;
-        width: 100%;
-        text-align: center; /* vycentrovanie textu */
-    }
-
-    .contact-section p, 
-    .contact-section h3 {
-        text-align: center; /* vycentrovanie textu a nadpisu */
-    }
-
-    .contact-section form {
-        grid-template-columns: 1fr !important;
+    .contact-info {
+        margin: 0 0 30px 0 !important;
         width: 100%;
         max-width: 400px;
-        margin: 0 auto;
+        text-align: center !important;
+        margin-left: 0 !important;
     }
-}
+    .contact-form {
+        width: 100%;
+        max-width: 400px;
+    }
+    .contact-form form {
+        grid-template-columns: 1fr !important;
+    }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        width: 100% !important;
+    }
 
 
-.contact-section input,
-.contact-section textarea {
-    padding: 10px;
-    background: #333;
-    border: none;
-    color: white;
-}
+    .contact-section input,
+    .contact-section textarea {
+        width: 100%;
+        background: #333;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        border: none;
+        box-sizing: border-box;
+    }
 
-.contact-section textarea {
-    grid-column: span 2;
-}
+    .contact-section button {
+        grid-column: span 1;
+        width: 100%;
+        background: #ff9800;
+        color: black;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        padding: 10px;
+        border: none;
+        transition: background 0.3s ease;
+    }
 
-.contact-section button {
-    grid-column: span 2;
-    padding: 10px;
-    background: #444;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
+    .contact-section button:hover {
+        background: #e68900;
+    }
 }
