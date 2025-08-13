@@ -1,200 +1,205 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cenník</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            background: linear-gradient(135deg, #121212, #1f1f1f); /* Changed to even darker grey tones */
-            color: rgb(255, 255, 255);
-            font-family: 'Lato', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            background: rgba(37, 37, 37, 0.8);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between; /* Move content to edges */
-            align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        nav h1 {
-            font-size: 1.8rem;
-            color: #ff9800;
-            font-weight: bold;
-            margin-right: 40px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 0; /* No gap between buttons */
-            margin: 0 0 0 500px; /* Move Domov button 50px to the left */
-            padding: 50; /* Remove left padding */
-        }
-
-        nav a {
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: color 0.3s ease;
-            margin-left: 0; /* Remove left margin */
-            padding: 0.5rem 1.2rem;
-        }
-
-        nav a:hover {
-            color: #ff9800;
-        }
-
-        #pricing {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        #pricing h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #ff9800;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        #pricing p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            color: #e0e0e0;
-        }
-
-        .pricing-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .pricing-card {
-            background: transparent; /* Same as background */
-            color: #fff; /* Always white text */
-            padding: 30px;
-            border-radius: 15px;
-            width: 300px;
-            text-align: center;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            transition: background 0.3s ease, color 0.3s, transform 0.3s, box-shadow 0.3s;
-        }
-
-        .pricing-card:hover {
-            background: #292929;
-            color: #fff;
-            transform: translateY(-10px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
-        }
-
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #ff9800;
-        }
-
-        .pricing-card p {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #fff; /* Changed to white for visibility */
-        }
-
-        .pricing-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: left;
-        }
-
-        .pricing-card ul li {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #fff; /* Always white text */
-        }
-
-        .pricing-card ul li::before {
-            content: "✔";
-            color: #ff9800;
-            margin-right: 10px;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            margin: 40px auto 0 auto;
-            padding: 20px 60px;
-            background: transparent;
-            color: #ff9800;
-            border: 2px solid #ff9800;
-            border-radius: 15px;
-            font-size: 1.3rem;
-            font-family: 'Lato', sans-serif;
-            font-weight: bold;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-        }
-
-        .contact-btn:hover {
-            background: #292929;
-            color: #fff;
-            box-shadow: 0 12px 24px rgba(0,0,0,0.5);
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <h1>TK ELEKTRO</h1>
-        <ul>
-            <li><a href="index.html">Domov</a></li>
-        </ul>
-    </nav>
-
-    <section id="pricing">
-        <h2>Cenník</h2>
-        <p>Vyberte si z našich služieb za výhodné ceny</p>
-        <div class="pricing-container">
-            <div class="pricing-card">
-                <h3>Prípojky a Revízie</h3>
-                <p>Cena od: <strong>€100</strong></p>
-                <ul>
-                    <li>Elektrické prípojky</li>
-                    <li>Výroba a montáž rozvádzača</li>
-                    <li>Preventívna kontrola</li>
-                    <li>Kontrola termokamerou</li>
-                    <li>Bleskozvody</li>
-                </ul>
-            </div>
-            <div class="pricing-card">
-                <h3>Elektroinštalácie</h3>
-                <p>Cena od: <strong>€150</strong></p>
-                <ul>
-                    <li>Bytová</li>
-                    <li>Domová</li>
-                    <li>Priemyselná</li>
-                    <li>Slaboprúdová</li>
-                    <li>Silnoprúdová</li>
-                </ul>
-            </div>
-            <div class="pricing-card">
-                <h3>Rekonštrukcia</h3>
-                <p>Cena od: <strong>€200</strong></p>
-                <ul>
-                    <li>Rekonštrukcia rozvádzača</li>
-                    <li>Domová prípojka</li>
-                    <li>Porevízne prípravy</li>
-                    <li>Rekonštrukcia elektrických rozvodov</li>
-                </ul>
-            </div>
-        </div>
-        <a href="index.html#section4" class="contact-btn">KONTAKTUJTE NÁS</a>
-    </section>
-</body>
-</html>
+diff --git a/pricing.html b/pricing.html
+index 11106f041a6a9fd9ad7914468def972b4af2a00d..cce9d0c5957f2800e6b9960403f43e2f7c4d82d1 100644
+--- a/pricing.html
++++ b/pricing.html
+@@ -1,77 +1,52 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Cenník</title>
+-    <link rel="stylesheet" href="styles.css">
+-    <style>
+-        body {
+-            background: linear-gradient(135deg, #121212, #1f1f1f); /* Changed to even darker grey tones */
+-            color: rgb(255, 255, 255);
+-            font-family: 'Lato', sans-serif;
+-            margin: 0;
+-            padding: 0;
+-        }
+-
+-        nav {
+-            background: rgba(37, 37, 37, 0.8);
+-            padding: 1rem 2rem;
+-            display: flex;
+-            justify-content: space-between; /* Move content to edges */
+-            align-items: center;
+-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+-        }
+-
+-        nav h1 {
+-            font-size: 1.8rem;
+-            color: #ff9800;
+-            font-weight: bold;
+-            margin-right: 40px;
+-        }
+-
+-        nav ul {
+-            list-style: none;
+-            display: flex;
+-            gap: 0; /* No gap between buttons */
+-            margin: 0 0 0 500px; /* Move Domov button 50px to the left */
+-            padding: 50; /* Remove left padding */
+-        }
+-
+-        nav a {
+-            color: rgb(255, 255, 255);
+-            text-decoration: none;
+-            font-size: 1.2rem;
+-            transition: color 0.3s ease;
+-            margin-left: 0; /* Remove left margin */
+-            padding: 0.5rem 1.2rem;
+-        }
+-
+-        nav a:hover {
+-            color: #ff9800;
+-        }
++    <title>Cenník</title>
++    <link rel="stylesheet" href="styles.css">
++    <script defer src="script.js"></script>
++    <style>
++        body {
++            background: linear-gradient(135deg, #121212, #1f1f1f);
++            color: #fff;
++            font-family: 'Lato', sans-serif;
++            margin: 0;
++            padding: 0;
++        }
++
++        nav {
++            background: rgba(37, 37, 37, 0.8);
++            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
++        }
++
++        nav h1 {
++            font-size: 1.8rem;
++            color: #ff9800;
++            font-weight: bold;
++        }
+ 
+         #pricing {
+             padding: 50px 20px;
+             text-align: center;
+         }
+ 
+         #pricing h2 {
+             font-size: 3rem;
+             margin-bottom: 20px;
+             color: #ff9800;
+             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+         }
+ 
+         #pricing p {
+             font-size: 1.5rem;
+             margin-bottom: 40px;
+             color: #e0e0e0;
+         }
+ 
+         .pricing-container {
+             display: flex;
+             justify-content: center;
+             gap: 30px;
+             flex-wrap: wrap;
+         }
+diff --git a/pricing.html b/pricing.html
+index 11106f041a6a9fd9ad7914468def972b4af2a00d..cce9d0c5957f2800e6b9960403f43e2f7c4d82d1 100644
+--- a/pricing.html
++++ b/pricing.html
+@@ -120,64 +95,82 @@
+         }
+ 
+         .pricing-card ul li::before {
+             content: "✔";
+             color: #ff9800;
+             margin-right: 10px;
+         }
+ 
+         .contact-btn {
+             display: inline-block;
+             margin: 40px auto 0 auto;
+             padding: 20px 60px;
+             background: transparent;
+             color: #ff9800;
+             border: 2px solid #ff9800;
+             border-radius: 15px;
+             font-size: 1.3rem;
+             font-family: 'Lato', sans-serif;
+             font-weight: bold;
+             letter-spacing: 1px;
+             cursor: pointer;
+             box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+             transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+         }
+ 
+-        .contact-btn:hover {
+-            background: #292929;
+-            color: #fff;
+-            box-shadow: 0 12px 24px rgba(0,0,0,0.5);
+-        }
+-    </style>
+-</head>
+-<body>
+-    <nav>
+-        <h1>TK ELEKTRO</h1>
+-        <ul>
+-            <li><a href="index.html">Domov</a></li>
+-        </ul>
+-    </nav>
++        .contact-btn:hover {
++            background: #292929;
++            color: #fff;
++            box-shadow: 0 12px 24px rgba(0,0,0,0.5);
++        }
++        @media (max-width: 768px) {
++            .pricing-card {
++                width: 80%;
++            }
++        }
++        @media (max-width: 480px) {
++            .pricing-card {
++                width: 100%;
++            }
++        }
++    </style>
++</head>
++<body>
++    <nav>
++        <h1>TK ELEKTRO</h1>
++        <button class="hamburger" aria-label="Otvorenie menu" aria-expanded="false" aria-controls="main-nav">
++            <span></span>
++            <span></span>
++            <span></span>
++        </button>
++        <ul id="main-nav" class="nav-menu">
++            <li><a href="index.html#home">Domov</a></li>
++            <li><a href="index.html#about-us">Služby</a></li>
++            <li><a href="index.html#services">Realizácie</a></li>
++            <li><a href="index.html#section4">Kontakt</a></li>
++        </ul>
++    </nav>
+ 
+     <section id="pricing">
+         <h2>Cenník</h2>
+         <p>Vyberte si z našich služieb za výhodné ceny</p>
+         <div class="pricing-container">
+             <div class="pricing-card">
+                 <h3>Prípojky a Revízie</h3>
+                 <p>Cena od: <strong>€100</strong></p>
+                 <ul>
+                     <li>Elektrické prípojky</li>
+                     <li>Výroba a montáž rozvádzača</li>
+                     <li>Preventívna kontrola</li>
+                     <li>Kontrola termokamerou</li>
+                     <li>Bleskozvody</li>
+                 </ul>
+             </div>
+             <div class="pricing-card">
+                 <h3>Elektroinštalácie</h3>
+                 <p>Cena od: <strong>€150</strong></p>
+                 <ul>
+                     <li>Bytová</li>
+                     <li>Domová</li>
+                     <li>Priemyselná</li>
+                     <li>Slaboprúdová</li>
+                     <li>Silnoprúdová</li>
